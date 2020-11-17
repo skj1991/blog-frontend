@@ -1,12 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <App />
-    </div>
-  );
+class App extends React.Component {
+
+  
+  // Testing backend to ensure the information is being received correctly 
+  // componentDidMount(){
+  //    fetch('http://localhost:3000/api/v1/posts/1')
+  //    .then(response => response.json())
+  //    .then(data => console.log(data))
+  // }
+
+  render(){
+    return (
+      <div className="App">  
+        App
+      </div>
+    );
+  }
 }
 
 export default App;
