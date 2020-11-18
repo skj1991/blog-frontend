@@ -6,7 +6,7 @@ class CommentContainer extends Component {
     render(){
         return(
             <div>
-                <CommentInput />
+                <CommentInput post={this.props.post}/>
                 <Comments comments={this.props.post && this.props.post.comments} /> 
             </div>
         )
@@ -14,4 +14,4 @@ class CommentContainer extends Component {
 
 }
 
-export default CommentContainer
+export default CommentContainer 

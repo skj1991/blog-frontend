@@ -1,13 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
+
 
 const Comments = (props) => {
     return(
         <div>
-            Comments
+            {props.comments && props.comments.map(comment => 
+                <li key={comment.id}>{comment.content}</li>    
+            )}
         </div>
     )
 
 }
 
-export default Comments
+export default Comments 

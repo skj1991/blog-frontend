@@ -4,6 +4,7 @@ import CommentContainer from '../../containers/CommentContainer'
 
 const Post = (props) => { 
     const post = props.posts[props.match.params.id - 1]
+    //let post = props.posts.filter(post => post.id === props.match.params.id)[0]
     return(
         <div>
            {post ? post.title : null}
