@@ -1,14 +1,15 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
+import CommentContainer from '../../containers/CommentContainer'
 
-const Post = (props) => {
-    console.log(props)
-
+const Post = (props) => { 
     const post = props.posts[props.match.params.id - 1]
     return(
         <div>
            {post ? post.title : null}
            <img src={post ? post.image : null} alt='Cannot Load!' width="500" height="600"/>
            {post ? post.content : null}
+           <CommentContainer post={post} />
         </div>
        )
 }
