@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import PostInput from '../components/posts/PostInput'
 import Posts from '../components/posts/Posts'
+import Post from '../components/posts/Post'
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/fetchPosts'
 
@@ -14,9 +16,9 @@ class PostContainer extends Component {
     render(){
         return(
             <div>
-                <PostInput /><br>
-                </br>
-                <Posts posts={this.props.posts}/>
+                <Route path='/posts/new' component={PostInput} />
+                <Route exact path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts} />} />
+                <Route exact path='/posts' render={(routerProps) => <Posts {...routerProps} posts={this.props.posts} />} />
             </div>
         )
     }

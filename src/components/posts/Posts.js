@@ -1,15 +1,14 @@
 import React from 'react';
+import Post from './Post'
 
 const Posts = (props) => {
     
     return(
      <div>
         {props.posts.map(post => 
-            <li key={post.id}> 
-            {post.title},
-            <img src={post.image} alt='unable to display'/>
-            {post.content}
-            </li>
+            <div key={post.id}> 
+                 <Post post={post} />
+            </div>
             )}
      </div>
     )
