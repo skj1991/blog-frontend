@@ -12,16 +12,25 @@ export default function postsReducer(state = {posts: []}, action){
                 posts: [...state.posts, action.payload]
             }
         case 'ADD_COMMENT':
-            return{
-                ...state,
-                posts: state.posts.map(post => {
-                    if (post.id === action.payload.id){
-                        return action.payload
-                    }else{
-                        return post
-                    }
+            let newposts =  state.posts.map(post => {
+                if (post.id === action.payload.id){
+                    return action.payload
+                }else{
+                    return post
+                }
                 })
-            }
+            return{...state, newposts: newposts}
+
+        case 'DELETE _COMMENT':
+            debugger;
+            let posts =  state.posts.map(post => {
+                if (post.id === action.payload.id){
+                    return action.payload
+                }else{
+                    return post
+                }
+                })
+            return{...state, posts: posts}
         default:
             return state;
     }
