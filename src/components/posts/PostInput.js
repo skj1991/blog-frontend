@@ -23,6 +23,7 @@ class PostInput extends Component {
             image: '', 
             content: ''
         });
+        this.props.history.push(`/posts`)
     }
 
     render(){

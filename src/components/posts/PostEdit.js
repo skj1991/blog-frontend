@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { editPost } from '../../actions/editPost'
 
 class PostEdit extends Component {
-
+    
     state = {
-        title: '', 
-        image: '', 
-        content: ''
+        title: this.props.post ? this.props.post.title : "", 
+        image: this.props.post ? this.props.post.image : "", 
+        content: this.props.post ? this.props.post.content : ""
     }
 
     handleOnChange = event => {
@@ -15,19 +15,21 @@ class PostEdit extends Component {
           [event.target.name] : event.target.value
         })
     }
-
+//this.props.history.push(route you want to visit)
     handleOnSubmit = event => {
         event.preventDefault();
-        let post = {...this.state, id: this.props.post.id}
-        this.props.editPost(post)
+        let postEdit = {...this.state, id: this.props.post.id}
+        this.props.editPost(postEdit)
         this.setState({
             title: '', 
             image: '', 
             content: ''
         });
+        this.props.history.push(`/posts`)
     }
 
     render(){
+        console.log(this.props)
         return(
         <div>
           <form onSubmit={this.handleOnSubmit}>
@@ -62,4 +64,11 @@ class PostEdit extends Component {
     }
 }
 
-export default connect(null, {editPost})(PostEdit)
+const mapStateToProps = (state, ownProps) => {
+
+    return {
+        post: state.posts.find((post) => post.id == ownProps.match.params.id)
+    }
+}
+
+export default connect(mapStateToProps, {editPost})(PostEdit)

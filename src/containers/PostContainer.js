@@ -21,9 +21,9 @@ class PostContainer extends Component {
                 <NavBar />
                 <Switch>
                     <Route path='/posts/new' component={PostInput} />
-                    <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts} />} />
-                    <Route exact path='/posts/:id/edit' component={PostEdit}/>} />
+                    <Route exact path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts} />} />
                     <Route exact path='/posts' render={(routerProps) => <Posts {...routerProps} posts={this.props.posts} />} />
+                    <Route exact path='/posts/:id/edit' render={(routerProps) => <PostEdit {...routerProps} posts={this.props.posts} />} />
                 </Switch>
             </div>
         )
