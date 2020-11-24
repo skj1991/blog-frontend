@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addComment } from '../../actions/addComment'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class CommentInput extends Component {
     state = {
@@ -24,7 +26,16 @@ class CommentInput extends Component {
     render(){
         return(
             <div>
-                <form onSubmit={this.handleOnSubmit}>
+                <Form onSubmit={this.handleOnSubmit}>
+                    <Form.Group controlId="comment">
+                        <Form.Label>Enter Comment</Form.Label>
+                        <Form.Control ttype='text' placeholder='Enter Comment' value={this.state.content} name='content' onChange={this.handleOnChange}/>
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Form>
+                {/* <form onSubmit={this.handleOnSubmit}>
                     <label>Enter Comment:</label>
                     <input 
                     type='text'
@@ -34,10 +45,11 @@ class CommentInput extends Component {
                     onChange={this.handleOnChange}
                     />
                     <input type='submit'/>
-                </form>
+                </form> */}
             </div>
         )
     }
 }
+
 
 export default connect(null, { addComment })(CommentInput)

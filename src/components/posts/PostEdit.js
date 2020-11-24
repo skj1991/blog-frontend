@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { editPost } from '../../actions/editPost'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class PostEdit extends Component {
     
@@ -32,7 +34,31 @@ class PostEdit extends Component {
         console.log(this.props)
         return(
         <div>
-          <form onSubmit={this.handleOnSubmit}>
+            <Form onSubmit={this.handleOnSubmit}>
+                <Form.Group controlId="postEditTitle">
+                    <Form.Label>Edit Title</Form.Label>
+                    <Form.Control type="title" placeholder="Enter title" value={this.state.title} name='title' onChange={this.handleOnChange}/>
+                </Form.Group>
+
+                <Form.Group controlId="postEditImage">
+                    <Form.Label>Edit Image</Form.Label>
+                    <Form.Control type="image" placeholder="Image" value={this.state.image} name='image' onChange={this.handleOnChange}/>
+                </Form.Group>
+
+                <Form.Group controlId="postEditContent">
+                    <Form.Label>Edit Content</Form.Label>
+                    <Form.Control as="textarea" rows={3} type='content'
+                            placeholder='Content'
+                            value={this.state.content}
+                            name='content'
+                            onChange={this.handleOnChange}/>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+          {/* <form onSubmit={this.handleOnSubmit}>
             <label>Edit Title:</label>
             <input 
             type='text'
@@ -58,7 +84,7 @@ class PostEdit extends Component {
             onChange={this.handleOnChange}
             />
           <input type='submit'/>
-         </form>
+         </form> */}
         </div>
         )
     }
@@ -72,3 +98,4 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps, {editPost})(PostEdit)
+
