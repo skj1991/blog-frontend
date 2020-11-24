@@ -27,11 +27,11 @@ class PostEdit extends Component {
             image: '', 
             content: ''
         });
-        this.props.history.push(`/posts`)
+        this.props.history.push(`/posts/${this.props.post.id}`)
     }
 
     render(){
-        console.log(this.props)
+        //console.log(this.props)
         return(
         <div>
             <Form onSubmit={this.handleOnSubmit}>
@@ -42,7 +42,7 @@ class PostEdit extends Component {
 
                 <Form.Group controlId="postEditImage">
                     <Form.Label>Edit Image</Form.Label>
-                    <Form.Control type="image" placeholder="Image" value={this.state.image} name='image' onChange={this.handleOnChange}/>
+                    <Form.Control type="text" placeholder="Image" value={this.state.image} name='image' onChange={this.handleOnChange}/>
                 </Form.Group>
 
                 <Form.Group controlId="postEditContent">

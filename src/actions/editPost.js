@@ -10,6 +10,6 @@ export const editPost = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(newpost => dispatch({type: 'EDIT_POST', payload: newpost}))
+        .then(newPost => console.log(newPost)) //why is payload returning null??
     }
 }

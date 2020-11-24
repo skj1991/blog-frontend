@@ -14,9 +14,6 @@ const Post = (props) => {
     //let post = props.posts.filter(post => post.id === props.match.params.id)[0]
     return(
         <div> 
-            <Link to={`/posts/${post.id}/edit`}>
-                <Button variant="primary">Edit Post</Button> 
-            </Link> 
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={post ? post.image : null} />
                 <Card.Body>
@@ -25,8 +22,11 @@ const Post = (props) => {
                         Content: {post ? post.content : null}
                     </Card.Text>
                     <CommentContainer post={post} />
-                </Card.Body>
-                
+                    <br></br>
+                    <Link to={`/posts/${post.id}/edit`}>
+                        <Button variant="primary">Edit Post</Button> 
+                    </Link>
+                </Card.Body> 
             </Card>  
                
            {/* {post ? post.title : null}
