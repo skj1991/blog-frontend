@@ -14,7 +14,8 @@ const Post = (props) => {
     //let post = props.posts.filter(post => post.id === props.match.params.id)[0]
     return(
         <div> 
-            <Card style={{ width: '18rem' }}>
+            {post ? (
+                <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={post ? post.image : null} />
                 <Card.Body>
                     <Card.Title>Title: {post ? post.title : null}</Card.Title>
@@ -27,7 +28,8 @@ const Post = (props) => {
                         <Button variant="primary">Edit Post</Button> 
                     </Link>
                 </Card.Body> 
-            </Card>  
+            </Card>
+            ) : null}
                
            {/* {post ? post.title : null}
            <img src={post ? post.image : null} alt='Cannot Load!' width="500" height="600"/>
