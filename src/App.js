@@ -8,7 +8,12 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App"> 
+      <div className="App" style={{
+        backgroundColor: 'lightgray',
+        width: '10000px',
+        height: '10000px'
+      }}
+      > 
         <Route exact path='/' component={Homepage} /> 
         {/* <Route exact path='/posts' component={PostContainer} /> 
         creating router files to handle! */}
