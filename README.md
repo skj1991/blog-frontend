@@ -1,4 +1,41 @@
-# Getting Started with Create React App
+# Welcome to The Wander's Archives! 
+
+The Wander's Archives is a single page application with an HTML, CSS, and React-Redux frontend and a Rails API backend. It allows you to create and view clever travel post and recommendations of other users to get an idea for your next travel destination. 
+
+## Getting Started:
+
+To download The Wander's Archives, follow these steps:
+
+1. Install the latest version of Ruby. (You can check if Ruby is already installed by running Ruby -v in your terminal. If it is installed, you will see a version number.)
+2. Fork and clone the repo for the backend: https://github.com/skj1991/blog-backend.git
+3. Navigate to the 'blog-backend' directory on your device, and run these commands:
+
+    'bundle install'
+
+    'rails db:create'
+
+    'rails db:migrate'
+
+    'rails db:seed'
+4. If you recieve no errors, run 'rails s' in your terminal to start the server.
+5. Fork and clone this repo for the frontend: https://github.com/skj1991/blog-frontend.git
+6. Navigate to the 'blog-frontend' directory on your device, and run these commands:
+
+    'npm start'
+    
+7. Select Y to use different server and you will be redirected to the browser to view A Wander's Archives!
+
+## Contributing
+
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
+## Author
+ 
+Stacy Johns
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
