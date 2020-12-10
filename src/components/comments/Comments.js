@@ -11,6 +11,7 @@ const Comments = (props) => {
          props.deleteComment(comment.id, comment.post_id)
     }
 
+
     return(
         <div>
             <Card style={{ width: '18rem' }}>
@@ -19,7 +20,7 @@ const Comments = (props) => {
                     {props.comments && props.comments.map(comment => 
                     <ListGroup.Item>
                         {comment.content}
-                         <Button type="delete" onClick={() => handleDelete(comment)}>Delete</Button>  
+                         <Button type="delete" onClick={() => handleDelete(comment)}>Delete</Button> 
                     </ListGroup.Item>
                     )}
                 </ListGroup>

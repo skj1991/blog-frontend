@@ -29,7 +29,7 @@ class CommentInput extends Component {
                 <Form onSubmit={this.handleOnSubmit}>
                     <Form.Group controlId="comment">
                         <Form.Label>Enter Comment</Form.Label>
-                        <Form.Control ttype='text' placeholder='Enter Comment' value={this.state.content} name='content' onChange={this.handleOnChange}/>
+                        <Form.Control type='text' placeholder='Enter Comment' value={this.state.content} name='content' onChange={this.handleOnChange}/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
